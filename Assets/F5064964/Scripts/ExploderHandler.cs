@@ -1,16 +1,15 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ExploderHandler : Interaction
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+        OnShortInteraction += Testing;
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Testing(GameObject instigator)
     {
-        
+        Debug.Log("Test");
     }
 }
