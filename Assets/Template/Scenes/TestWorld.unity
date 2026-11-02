@@ -556,10 +556,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1471398828}
+  - component: {fileID: 1471398831}
   - component: {fileID: 1471398829}
   - component: {fileID: 1471398830}
   - component: {fileID: 1471398832}
-  - component: {fileID: 1471398831}
   m_Layer: 0
   m_Name: TestCarry
   m_TagString: Untagged
