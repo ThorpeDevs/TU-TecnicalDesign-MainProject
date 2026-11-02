@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 1471398828}
   - component: {fileID: 1471398829}
   - component: {fileID: 1471398830}
+  - component: {fileID: 1471398832}
   - component: {fileID: 1471398831}
   m_Layer: 0
   m_Name: TestCarry
@@ -575,7 +576,7 @@ Transform:
   m_GameObject: {fileID: 1471398826}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.52032, y: 0.61, z: 1.45}
+  m_LocalPosition: {x: -2.52032, y: 0.834, z: 3.642}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -601,7 +602,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 3, z: 1.5}
+  m_Size: {x: 2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1471398830
 MonoBehaviour:
@@ -615,15 +616,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d522d38e5b7ba4245965c3963eea9490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  InteractionType: 0
+  InteractionType: 1
   _enabled: 1
-  <OneShot>k__BackingField: 0
+  <OneShot>k__BackingField: 1
   <Duration>k__BackingField: -1
   <ProgressMethod>k__BackingField: 0
   timeout: 0.1
-  carryInteractType: 0
+  carryInteractType: 1
   playerArmature: {fileID: 1447592356}
   playerDistance: 2.5
+  placementPosition: {x: 0, y: 1, z: 0}
+  doThrow: 1
+  throwForce: 5
+  OnThrowEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1471398832}
+        m_TargetAssemblyTypeName: BombHandler, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!54 &1471398831
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -649,8 +668,21 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1471398832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471398826}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb03fddecc20604bbe68493f149feb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BombHandler
+  timeToWait: 5
 --- !u!1 &1790525299
 GameObject:
   m_ObjectHideFlags: 0
